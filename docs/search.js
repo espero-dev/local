@@ -10,12 +10,9 @@ end*/
 var textboxes = document.getElementsByClassName("search");
 var btn = document.getElementsByClassName("srbtn");
 
-btn.addEventListener("click", function() {
-    clicked = !clicked;
-});
-
 for (var i = 0; i < textboxes.length; i++) {
-    textboxes[i].addEventListener("click", function() {
+    btn.addEventListener("click", function() {
+        clicked = !clicked;
         if (clicked) {
             var innerTextValue = this.innerText;
             console.log(innerTextValue);
@@ -23,5 +20,7 @@ for (var i = 0; i < textboxes.length; i++) {
               window.scrollTo(0, 300);
             }
         }
+    });
+    textboxes[i].addEventListener("click", function() {
     });
 }
