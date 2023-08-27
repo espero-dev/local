@@ -38,17 +38,17 @@
       <button class="square">test</button>
       <label for="myDropdown">parts:</label>
       <select id="myDropdown">
-        <option value="info" onclick="window.scrollTo(0, 0);">info</option>
-        <option value="startup" onclick="window.scrollTo(0, 1000);">startup</option>
-        <option value="build" onclick="window.scrollTo(0, 2500);">build</option>
-        <option value="fat32" onclick="window.scrollTo(0, 3300);">fat32</option>
-        <option value="pts" onclick="window.scrollTo(0, 4100);">print to screen</option>
-        <option value="commands" onclick="window.scrollTo(0, 4900);">commands</option>
-        <option value="paging" onclick="window.scrollTo(0, 5700);">paging</option>
-        <option value="taskbar" onclick="window.scrollTo(0, 6500);">taskbar</option>
-        <option value="bitmap" onclick="window.scrollTo(0, 7300);">bitmap</option>
-        <option value="backgrounds" onclick="window.scrollTo(0, 8100);">backgrounds</option>
-        <option value="userspace" onclick="window.scrollTo(0, 8900);">userspace</option>
+        <option value="info" onclick="window.scrollTo(0, document.getElementsByClassName('info').getBoundingClientRect().top);">info</option>
+        <option value="startup" onclick="window.scrollTo(0, document.getElementsByClassName('startup').getBoundingClientRect().top);">startup</option>
+        <option value="build" onclick="window.scrollTo(0, document.getElementsByClassName('build').getBoundingClientRect().top);">build</option>
+        <option value="fat32" onclick="window.scrollTo(0, document.getElementsByClassName('fat32').getBoundingClientRect().top);">fat32</option>
+        <option value="pts" onclick="window.scrollTo(0, document.getElementsByClassName('printtoscreen').getBoundingClientRect().top);">print to screen</option>
+        <option value="commands" onclick="window.scrollTo(0, document.getElementsByClassName('commands').getBoundingClientRect().top);">commands</option>
+        <option value="paging" onclick="window.scrollTo(0, document.getElementsByClassName('paging').getBoundingClientRect().top);">paging</option>
+        <option value="taskbar" onclick="window.scrollTo(0, document.getElementsByClassName('taskbar').getBoundingClientRect().top);">taskbar</option>
+        <option value="bitmap" onclick="window.scrollTo(0, document.getElementsByClassName('bitmap').getBoundingClientRect().top);">bitmap</option>
+        <option value="background" onclick="window.scrollTo(0, document.getElementsByClassName('background').getBoundingClientRect().top);">background</option>
+        <option value="userspace" onclick="window.scrollTo(0, document.getElementsByClassName('userspace').getBoundingClientRect().top);">userspace</option>
       </select>
       <div class="form">
         <textarea class="search"></textarea>
