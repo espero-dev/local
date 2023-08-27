@@ -10,17 +10,13 @@ end*/
 var textboxes = document.getElementsByClassName("search");
 var btn = document.getElementsByClassName("srbtn");
 
-for (var i = 0; i < textboxes.length; i++) {
-    btn.addEventListener("click", function() {
-        clicked = !clicked;
-        if (clicked) {
-            var innerTextValue = this.innerText;
-            console.log(innerTextValue);
-            if (innerTextValue == "paging") {
-              window.scrollTo(0, 300);
-            }
+btn.addEventListener("click", function() {
+    clicked = !clicked;
+    if (clicked) {
+        var innerTextValue = textboxes.innerText;
+        console.log(innerTextValue);
+        if (innerTextValue == "paging") {
+          window.scrollTo(0, 300);
         }
-    });
-    textboxes[i].addEventListener("click", function() {
-    });
-}
+    }
+});
