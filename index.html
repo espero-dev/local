@@ -37,18 +37,18 @@
     <nav class="top">
       <button class="square">test</button>
       <label for="myDropdown">parts:</label>
-      <select id="myDropdown">
-        <option value="info" onclick="window.scrollTo(0, document.getElementsByClassName('info').getBoundingClientRect().top);">info</option>
-        <option value="startup" onclick="window.scrollTo(0, document.getElementsByClassName('startup').getBoundingClientRect().top);">startup</option>
-        <option value="build" onclick="window.scrollTo(0, document.getElementsByClassName('build').getBoundingClientRect().top);">build</option>
-        <option value="fat32" onclick="window.scrollTo(0, document.getElementsByClassName('fat32').getBoundingClientRect().top);">fat32</option>
-        <option value="pts" onclick="window.scrollTo(0, document.getElementsByClassName('printtoscreen').getBoundingClientRect().top);">print to screen</option>
-        <option value="commands" onclick="window.scrollTo(0, document.getElementsByClassName('commands').getBoundingClientRect().top);">commands</option>
-        <option value="paging" onclick="window.scrollTo(0, document.getElementsByClassName('paging').getBoundingClientRect().top);">paging</option>
-        <option value="taskbar" onclick="window.scrollTo(0, document.getElementsByClassName('taskbar').getBoundingClientRect().top);">taskbar</option>
-        <option value="bitmap" onclick="window.scrollTo(0, document.getElementsByClassName('bitmap').getBoundingClientRect().top);">bitmap</option>
-        <option value="background" onclick="window.scrollTo(0, document.getElementsByClassName('background').getBoundingClientRect().top);">background</option>
-        <option value="userspace" onclick="window.scrollTo(0, document.getElementsByClassName('userspace').getBoundingClientRect().top);">userspace</option>
+      <select id="myDropdown" onchange="scrollToSelectedSection()">
+        <option value="info">info</option>
+        <option value="startup">startup</option>
+        <option value="build">build</option>
+        <option value="fat32">fat32</option>
+        <option value="pts">print to screen</option>
+        <option value="commands">commands</option>
+        <option value="paging">paging</option>
+        <option value="taskbar">taskbar</option>
+        <option value="bitmap">bitmap</option>
+        <option value="background">background</option>
+        <option value="userspace">userspace</option>
       </select>
       <div class="form">
         <textarea class="search"></textarea>
@@ -60,33 +60,49 @@
       <h2>this is only for linux rn i will make a different document for windows</h2>
     </div>
     <div class="startup" id="idfk">
+      <h1>startup</h1>
     </div>
     <div class="build" id="idfk">
+      <h1>build</h1>
     </div>
     <div class="fat32" id="idfk">
+      <h1>fat32</h1>
     </div>
-    <div class="printtoscreen" id="idfk">
+    <div class="pts" id="idfk">
+      <h1>print to screen</h1>
     </div>
     <div class="commands" id="idfk">
+      <h1>commands</h1>
     </div>
     <div class="paging" id="idfk">
+      <h1>paging</h1>
     </div>
     <div class="taskbar" id="idfk">
+      <h1>taskbar</h1>
     </div>
     <div class="bitmap" id="idfk">
+      <h1>bitmap</h1>
     </div>
     <div class="background" id="idfk">
+      <h1>background</h1>
     </div>
     <div class="userspace" id="idfk">
+      <h1>userspace</h1>
     </div>
   </body>
   <script>
-      var dropdown = document.getElementById("myDropdown");
-
-      dropdown.addEventListener("change", function() {
-          var selectedValue = dropdown.value;
-          console.log("Selected fruit: " + selectedValue);
-      });
+      function scrollToSelectedSection() {
+        var dropdown = document.getElementById("myDropdown");
+        var selectedValue = dropdown.value;
+      
+        var sectionToScroll = document.querySelector("." + selectedValue);
+        if (sectionToScroll) {
+          var rect = sectionToScroll.getBoundingClientRect();
+          var yPosition = rect.top + window.scrollY;
+          window.scrollTo(0, yPosition);
+        }
+      }
+    
       var textboxes = document.getElementsByClassName("search");
       var btn = document.getElementsByClassName("srbtn");
 
